@@ -15,7 +15,7 @@ function App() {
     let pass = "";
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     if (allowChar) {
-      str += "@#$%&(){}[]<>?|";
+      str += "~!@#$%^&*()_+{}[]<>?|";
     }
     if (allowNum) {
       str += "0123456789";
