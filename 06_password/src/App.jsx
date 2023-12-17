@@ -15,7 +15,7 @@ function App() {
     let pass = "";
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     if (allowChar) {
-      str += "~!@#$%^&*()_+{}[]<>?|";
+      str += "@#$%&(){}[]<>?|";
     }
     if (allowNum) {
       str += "0123456789";
@@ -33,7 +33,7 @@ function App() {
 
   const copyPasswordToClipboard = useCallback(() => {
     passwordRef.current?.select();
-    passwordRef.current?.setSelectionRange(0, 999);
+    passwordRef.current?.setSelectionRange(0, 99);
     window.navigator.clipboard.writeText(password);
   }, [password]);
   return (
