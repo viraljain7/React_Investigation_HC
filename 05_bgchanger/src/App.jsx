@@ -22,7 +22,7 @@ function App() {
   };
 
   return (
-    <div className="w-full h-screen bg-slate-700" style={{ background: backgroundColor }}>
+    <div className="w-full h-screen" style={{ background: backgroundColor }}>
       <div className="color-container fixed flex justify-center items-center bottom-3 inset-x-9 bg-white rounded-full gap-3 px-4">
         {colors.map((color, index) => (
           <div
