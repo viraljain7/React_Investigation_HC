@@ -20,7 +20,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import { X, Y, Z } from "index/component";
+import { X, Y, Z } from "component/index";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,6 +28,12 @@ const router = createBrowserRouter(
       <Route path="" element={<Home />} />
       <Route path="us/contact" element={<Contact />} />
       <Route path="about" element={<About />} />
+      <Route path="github/:username" element={<Github />} />
+      <Route
+        // Loader={}//padna hai
+        path="github"
+        element={<GithubId />}
+      />
     </Route>
   )
 );
@@ -84,4 +90,42 @@ const Github = () => {
 };
 
 export default Github;
+```
+
+## GithubId.jsx ~~learn Loader~~
+
+```js
+import { useEffect, useState } from "react";
+
+const GithubId = () => {
+  const [data, setData] = useState("");
+  useEffect(() => {
+    fetch("https://api.github.com/users/viraljain7")
+      .then((res) => res.json())
+      .then((followers) => {
+        console.log(followers);
+        setData(followers);
+      });
+  }, []);
+
+  return (
+    <div className="w-[80vw]  m-auto h-[70vh]  bg-slate-400">
+      <h1 className="text-center text-white text-3xl pt-2">
+        Github Follower : {data.followers}
+      </h1>
+      <div className="flex justify-evenly items-center">
+        <img
+          src={data.avatar_url}
+          alt=""
+          className="w-[300px] h-[300px]  rounded-full"
+        />
+        <div className="text-center text-white text-3xl pt-2">
+          Bio : {data.bio}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default GithubId;
 ```

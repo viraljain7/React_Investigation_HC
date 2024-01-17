@@ -22,6 +22,11 @@ const Header = () => {
                             </NavLink>
                         </li>
                         <li>
+                            <NavLink to="/github" className="text-white" activeClassName="font-bold">
+                                Github
+                            </NavLink>
+                        </li>
+                        <li>
                             <NavLink to="/us/contact" className="text-white" activeClassName="font-bold">
                                 contact
                             </NavLink>
